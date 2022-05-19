@@ -1,0 +1,16 @@
+- Installare Node.js + npm(gestore di pacchetti)
+- Installazione Angular/cli (command Line Interface)
+    npm install -g @angular/cli
+- Installazione typescript
+    npm install -g typescript
+
+
+Verifica Installazioni
+node --version 
+npm --version
+ng --version (angular)
+tsc --verison (typescript)
+
+
+Java : Javascript
+Ham : Hamster

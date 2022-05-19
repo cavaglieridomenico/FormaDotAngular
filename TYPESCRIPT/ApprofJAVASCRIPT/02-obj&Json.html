@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="demo"></div>
+    <script>
+        const demo = document.querySelector('#demo');
+        //definisco un oggetto con funzione costruttore
+        function Docente(nome, cognome, email){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.email = email;
+
+            this.presentati = function(){
+                //il this fa riferimento all'oggetto contenitore più vicino 
+                for(const chiave in this){
+                    if(typeof this[chiave] != "function"){
+                        demo.innerHTML += chiave + ' :' + this[chiave] + '<br>';
+                    }
+                }
+            }
+        }
+
+        //dario è un nuovo oggettto di tipo Docente
+        let dario = new Docente("Dario", "Mennillo", "dario@mail.com");
+        dario.presentati();
+
+        let corso = [
+            new Docente('Pippo', 'Plonti', 'pippo@mail.it'),
+            new Docente('Paolo', 'Rossi', 'p.rossi@mail.com'),
+            new Docente('Pluto', 'Bianchi', 'p.bianchi@mail.com')
+        ];
+
+        for(var i = 0; i < corso.length; i++){
+            corso[i].presentati()
+        }
+
+        //Notazione Intermedia
+        let persona = {
+            "nome": "Mario",
+            "cognome": "Gialli",
+            "matricola": "456"
+        }
+
+        console.log(persona.nome);
+
+        //Notazione JSON, tutti gli oggetti sono in formato stringa
+        let utente = '{"nome": "Anna", "cognome": "Bianchi", "tipo": "Amministratore"}';
+
+        console.log(utente.nome); //non ha senso .nome non esiste, utente è una stringa non un obj
+        console.log(utente);
+
+
+        //trasforma l'utente in un obj
+        let utenteObj = JSON.parse(utente);
+
+        console.log(utenteObj.nome); //Anna
+        console.log(typeof utenteObj);
+        console.log(utenteObj);
+
+
+        //Trasformo un oggetto in una stringa
+        let darioJSON = JSON.stringify(dario);
+        console.log(darioJSON);
+
+
+
+
+    </script>
+</body>
+</html>

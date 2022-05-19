@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Lista della spesa</h1>
+
+    <ul id="lista">
+        <li>Pane</li>
+        <li>Acqua</li>
+        <li>Farina</li>
+        <li>Uova</li>
+        <li>Vino</li>
+    </ul>
+
+    <div id="demo"></div>
+
+    <script>
+        const demo = document.querySelector('#demo');
+        //recupero lista in 2 modi
+        // const lista = document.getElementById('lista');
+
+        const lista = document.querySelector('#lista');
+
+        // const items = document.querySelectorAll('li'); //genera una nodelist simile agli array
+
+        const items = document.getElementsByTagName('li'); //genera una collection
+
+        console.log(items);
+
+        // for(var i = 0; i < items.length; i++){
+        //     items[i].setAttribute('class', 'rosso');
+        // }
+
+        //FOReach
+        //l'operatore ...Collection trasforma una collection in un array, quindi gestibile tramite foreach
+        // [...items].forEach(function(element){
+        //     element.setAttribute('class', 'rosso')
+        // });
+
+        //FORof
+        for(element of items){
+            element.setAttribute('class', 'rosso');
+            console.log(element);
+        }
+
+
+        //FORin
+        //GLi Object non sono iterabili, quindi non posso applicare un ciclo for
+        
+        //Definisco un ogg in notazione letterale
+        var studente = {
+            nome: "Dario",
+            matricola: 123,
+            materia: "Angular"
+        }
+
+        console.log(studente.nome);
+
+        for(proprieta in studente){
+            // console.log(typeof proprieta );
+            console.log(proprieta + ': ' + studente[proprieta]);
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

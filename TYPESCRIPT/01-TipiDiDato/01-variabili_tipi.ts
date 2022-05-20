@@ -32,7 +32,7 @@ console.log(typeof meseAnno);
 let hobbies: string[];
 hobbies = ['Musica', 'Programmazione', 'Sport', 'Poesia'];
 
-var elDemo: HTMLElement = document.getElementById('demo');
+var elDemo: HTMLElement= document.getElementById('demo');
 
 for(let i = 0; i < hobbies.length; i++){
     console.log(hobbies[i]);

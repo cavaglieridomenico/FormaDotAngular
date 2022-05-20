@@ -23,14 +23,14 @@ interface Umano{
 // }
 
 class Cittadino implements Umano {
-  
-   
-    
+
+
     constructor(public nome: string, public cognome: string, public eta: number){
-       
+    
     }
     
     saluta() : void{
+
         console.log("Ciao " + this.nome);
     }
 }
@@ -52,3 +52,5 @@ sindaco.saluta();
 
 let senatore = new Politico("Pierluigi", "Pierantola", 87);
 senatore.saluta()
+
+

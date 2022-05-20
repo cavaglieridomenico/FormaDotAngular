@@ -1,6 +1,7 @@
 interface Dipendente{
-    nome: string
-    //creo ulteriori proprietà e metodi in comune: cognome, matricola, calcolaStipendio(base){}
+    nome: string;
+    //crea altre proprietà e metodi: cognome, matricola, calcolaStipendio(moltiplicatore)
+
 }
 
 class Manager implements Dipendente{

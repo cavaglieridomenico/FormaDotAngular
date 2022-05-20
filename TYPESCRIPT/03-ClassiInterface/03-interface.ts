@@ -32,9 +32,23 @@ class Cittadino implements Umano {
     
     saluta() : void{
         console.log("Ciao " + this.nome);
-        
     }
 }
 
+
+class Politico implements Umano{
+    constructor(public nome: string, public cognome: string, public eta: number){
+       
+    }
+
+    saluta(): void{
+        console.log("Buongiorno, io sono il signor: " + this.cognome + ' ' + this.nome);
+    }
+}
+
+
 let sindaco = new Cittadino("Paolo", "Rossi" , 40);
 sindaco.saluta();
+
+let senatore = new Politico("Pierluigi", "Pierantola", 87);
+senatore.saluta()

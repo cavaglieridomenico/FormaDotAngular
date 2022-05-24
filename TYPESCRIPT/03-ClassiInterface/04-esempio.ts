@@ -5,13 +5,14 @@
 
 interface Motore{
 
-    
+    cilindrata: number;
     aumentaPotenza(): number;
     diminuisciPotenza(): number;
 }
 
 interface Auto{
-
+    marca: string;
+    modello: string;
     muovi();
     // calcolaGiri();
 }
@@ -21,17 +22,17 @@ class Bmw implements Auto{
     private velocita = 0;
 
     //chiameremo Dependency Injection 
-    constructor(private motore: Motore){
+    constructor(public marca: string, public modello: string, private motore: Motore){
 
     }
 
     muovi() {
         this.velocita = this.motore.aumentaPotenza();
-        return this.velocita
     }
 }
 
 class Motore1200 implements Motore{
+    cilindrata: number;
     aumentaPotenza()  {
         return 10;
     }
@@ -43,6 +44,7 @@ class Motore1200 implements Motore{
 
 
 class Motore1500 implements Motore{
+    cilindrata: number;
     aumentaPotenza(){
         return 30;
     }

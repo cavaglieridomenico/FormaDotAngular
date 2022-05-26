@@ -1,0 +1,21 @@
+<h1>Singolo Computer</h1>
+<p> {{'Computer'}} numero: {{computerID}} - stato del computer: {{computerStatus}} </p>
+
+
+<p>Direttiva ngStyle</p>
+<p [ngStyle]="{ backgroundColor: 'lightgreen' }">
+  {{'Computer'}} numero: {{computerID}} - stato del pc : {{computerStatus}}
+</p>
+
+<p>Direttiva ngStyle dinamica</p>
+<p [ngStyle]="{ 'background-color': getColor() }">
+  {{'Computer'}} numero: {{computerID}} - stato del pc : {{getComputerStatus()}}
+</p>
+
+<p>Direttiva ngClass</p>
+<p>Applico una classe dinamicamente</p>
+<p
+[ngStyle]="{ 'background-color': getColor() }"
+[ngClass]="{online: computerStatus === 'Online'}">
+{{'Computer'}} numero: {{computerID}} - stato del pc : {{getComputerStatus()}}
+</p>

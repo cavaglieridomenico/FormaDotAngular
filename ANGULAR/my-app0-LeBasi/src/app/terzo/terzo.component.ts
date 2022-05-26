@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TerzoComponent implements OnInit {
 
-  constructor() { }
+  numero: number;
+  parola: string;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    this.numero = 3;
+    this.parola = "tre";
+
   }
 
 }

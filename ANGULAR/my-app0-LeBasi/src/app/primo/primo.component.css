@@ -1,0 +1,10 @@
+p{
+  color: violet;
+}
+
+.dimensioni{
+  width: 50%;
+  height: 200px;
+  border: 2px solid red;
+  margin: 50px;
+}

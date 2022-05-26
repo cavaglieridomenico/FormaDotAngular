@@ -1,0 +1,12 @@
+/* Questa regola appartiene solo ad app.component, alla creazione di un nuovo component non verrà applicata ad altri component  */
+p{
+  color:red
+}
+
+.dimensioni{
+  width: 40%;
+  height: inherit;
+  border: 2px solid red;
+  margin: 1%;
+  float: left;
+}

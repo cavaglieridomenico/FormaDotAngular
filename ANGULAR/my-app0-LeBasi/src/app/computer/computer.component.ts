@@ -10,6 +10,8 @@ export class ComputerComponent implements OnInit {
   computerID = 3;
   computerStatus: string;
 
+  computerCreated = true;
+
 
   constructor() {
 
@@ -24,7 +26,12 @@ export class ComputerComponent implements OnInit {
   }
 
   getComputerStatus(){
-    return this.computerStatus;
+    // return this.computerStatus;
+    if(this.computerStatus === 'Online'){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 

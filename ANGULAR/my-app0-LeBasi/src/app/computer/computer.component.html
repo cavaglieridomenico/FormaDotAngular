@@ -16,6 +16,17 @@
 <p>Applico una classe dinamicamente</p>
 <p
 [ngStyle]="{ 'background-color': getColor() }"
-[ngClass]="{online: computerStatus === 'Online'}">
+[ngClass]="{online: getComputerStatus()}">
 {{'Computer'}} numero: {{computerID}} - stato del pc : {{getComputerStatus()}}
 </p>
+
+<!-- *ngIf Direttiva Built in, la quale agisce direttamente sul DOM -->
+
+<p *ngIf="computerCreated; else noComputer">
+  Il Computer è stato creato: {{computerCreated}}
+</p>
+
+<!-- #noComputer è una LOCAL REFERENCE, cioè una "varibile" che vive solo ed esclusivamente nel TEMPLATE -->
+<ng-template #noComputer>
+  <p>Non è stato creato nessun computer: {{computerCreated}}</p>
+</ng-template>

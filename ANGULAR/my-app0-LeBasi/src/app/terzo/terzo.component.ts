@@ -15,9 +15,11 @@ export class TerzoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.numero = 3;
-    this.parola = "tre";
+  this.numero = 4;
 
   }
 
+  mioMetodo(){
+    this.parola = "Ciao"
+  }
 }

@@ -8,7 +8,8 @@
     <!-- <img src="{{ricetta.image}}" alt=""> -->
     <img [src] = "ricetta.image" alt="">
 
-    <p *ngIf="ricetta.allergeni; else noAllergeni" >Allergeni: {{ricetta.allergeni }}</p>
+    <!-- trasformare gli allergeni in un array di allergeni -->
+    <p *ngIf="ricetta.allergeni; else noAllergeni" > {{ricetta.allergeni}}</p>
 
     <ng-template #noAllergeni>
       <p>Non ci sono allergeni</p>

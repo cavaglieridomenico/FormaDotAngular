@@ -1,1 +1,19 @@
-<p>lista-ricette works!</p>
+<h2>Queste sono le nostre ricette</h2>
+
+<div class="col">
+
+  <div class="divRicetta" *ngFor="let ricetta of ricette">
+    <h3>{{ricetta.nome}}</h3>
+    <p>{{ricetta.descrizione}}</p>
+    <!-- <img src="{{ricetta.image}}" alt=""> -->
+    <img [src] = "ricetta.image" alt="">
+
+    <p *ngIf="ricetta.allergeni; else noAllergeni" >Allergeni: {{ricetta.allergeni }}</p>
+
+    <ng-template #noAllergeni>
+      <p>Non ci sono allergeni</p>
+    </ng-template>
+
+    <p><strong>Prezzo: {{ricetta.prezzo | currency: 'EUR'}} </strong> </p>
+  </div>
+</div>

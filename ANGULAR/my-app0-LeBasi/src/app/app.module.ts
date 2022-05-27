@@ -11,6 +11,7 @@ import { StudenteComponent } from './primo/studente/studente.component';
 import { ComputerComponent } from './computer/computer.component';
 import { ComputersComponent } from './computers/computers.component';
 import { FormsModule } from '@angular/forms';
+import { Esercizio2Component } from './esercizio2/esercizio2.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     StudenteComponent,
     ComputerComponent,
     ComputersComponent,
+    Esercizio2Component,
   ],
   imports: [
     //nell'array import verranno importati tuttti i moduli accessori

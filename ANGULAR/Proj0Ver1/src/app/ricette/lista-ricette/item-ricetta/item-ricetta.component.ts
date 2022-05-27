@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ricetta } from '../../ricetta.model';
 
 @Component({
   selector: 'app-item-ricetta',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemRicettaComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

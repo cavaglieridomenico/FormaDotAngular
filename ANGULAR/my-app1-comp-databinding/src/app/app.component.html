@@ -1,0 +1,64 @@
+<div class="container">
+
+  <app-dashboard></app-dashboard>
+
+
+  <h2>Lista lezioni</h2>
+  <!--
+    <ul>
+      <li *ngFor="let lezione of lezioni">
+        {{lezione.nome}} - {{lezione.descrizione}}
+      </li>
+    </ul> -->
+
+    <!-- La prop element è definita nel figlio che io pongo uguale ad una propr, lezione, definita nel genitore -->
+    <!-- <app-lezione-element
+    *ngFor="let lezione of lezioni"
+    [element] = "lezione"></app-lezione-element> -->
+
+    <app-lezione-element
+    *ngFor="let lezione of lezioni"
+    [nomeLezione] = "lezione"></app-lezione-element>
+
+  </div>
+
+  <hr>
+
+  <!-- INPUT con App-prova-Input -->
+  <div class="container">
+    <h1>ESEMPIO INPUT</h1>
+    <h2>Esempio con singola string</h2>
+    <!-- FAre esempio senza oggetto ma solo con una stringa -->
+    <!-- <app-prova-input
+    [nome]="nomeDocente"></app-prova-input> -->
+
+    <!-- UN Input alla volta -->
+    <!-- <app-prova-input
+    [nome] = "nomeDoc"
+    [cognome] = "cognomeDoc"
+    [eta] = "etaDoc"></app-prova-input> -->
+
+    <!-- Un oggetto in input -->
+    <!-- <app-prova-input
+    [persona]="docente"></app-prova-input>
+
+    <app-prova-input
+    [persona]="studente"> </app-prova-input> -->
+
+    <!-- Array in Input -->
+
+    <app-prova-input
+    [nomi] = "nomiDocenti"></app-prova-input>
+
+  </div>
+
+
+  <div class="container">
+    <h1>Esempio OutPUT</h1>
+    <!-- Esempio con OUTPUT, app-prova-output -->
+    <app-prova-output
+    (informazione)="onReciveInfo($event)"></app-prova-output>
+
+    <app-prova-output
+    (dati)="onRiceviDato($event)"></app-prova-output>
+  </div>

@@ -28,6 +28,7 @@ import { Esercizio2Component } from './esercizio2/esercizio2.component';
   imports: [
     //nell'array import verranno importati tuttti i moduli accessori
     BrowserModule,
+    //Forms MOdule è obbligatorio per poter utilizzare la direttiva ngModel
     FormsModule
   ],
   providers: [],

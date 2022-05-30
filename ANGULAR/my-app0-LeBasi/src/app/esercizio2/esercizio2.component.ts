@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Esercizio2Component implements OnInit {
 
+  username = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onReset(){
+    this.username = '';
   }
 
 }

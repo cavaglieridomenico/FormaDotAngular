@@ -18,7 +18,6 @@ export class ComputersComponent implements OnInit {
   nomeComputer2 = "DanielePC" ;
 
   constructor() {
-
     setTimeout(() => {
       this.permessoAggComputer = true;
     }, 2000)

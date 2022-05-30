@@ -9,7 +9,7 @@ import { Ricetta } from '../ricetta.model';
 })
 export class ListaRicetteComponent implements OnInit {
 
-  ricette: Ricetta[];
+  ricette: Ricetta[]
   // = [
   //   new Ricetta("Pasta e Fagioli", "Un tipico piatto all'italiana", "https://via.placeholder.com/150", 12),
   //   new Ricetta("Carbonara", "Da mangiare solo a Roma", "https://via.placeholder.com/150", 13, "Uova"),
@@ -29,7 +29,7 @@ export class ListaRicetteComponent implements OnInit {
         descrizione: "Piatto antisociale",
         prezzo: 6,
         image: "https://via.placeholder.com/150",
-        allergeni: "Aglio"
+        allergeni: ["aglio", "acciughe", "latte"]
       },
       {
         nome: 'Amatriciana',

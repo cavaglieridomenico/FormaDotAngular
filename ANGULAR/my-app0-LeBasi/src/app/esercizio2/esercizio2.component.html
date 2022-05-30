@@ -1,21 +1,25 @@
 <h1>Esercizio 2</h1>
 <ul>
   <li>Costruisci un campo input che aggiorni la propr "username" attraverso il principio del two-way databinding</li>
-  <li>Stampa della pagina il valore della prop in due modi : string interpolation e property binding</li>
+  <li>Stampa nella pagina il valore della prop in due modi : string interpolation e property binding</li>
   <li>Aggiungi un pulsante, questo resetterà il campo input solo se il campo NON è vuoto. Se il campo è vuoto il pulsante non è cliccabile. Al pulsante dovrà essere collegato un metodo</li>
   <li>Verificare il funzionamento del two-way datbinding. Come fa funzionare ? Quali sono gli import necessari ?</li>
   <li>Fai il reset del campo senza metodo, sempre cliccando sul pulsante</li>
 </ul>
 
 <label for="username">Username: </label>
-<input type="text" >
-<p>Qui stampo ciò che scrivo nel campo input</p>
+<input type="text" [(ngModel)] = 'username' >
+<p> {{username}} </p>
 
 <br>
 
 <!-- il pulsante sarà disabilità fino a quando non scrivo nel campo input, dopodichè, con un metodo, resetto il campo stesso -->
-<button [disabled]="">Cliccami</button>
+<button [disabled]="username === '' "
+    (click)="onReset()">Reset con metodo
+</button>
 
 <!-- BONUS -->
 <!-- il pulsante cancella il campo input senza l'utilizzo del metodo  -->
-<button [disabled]="">Cliccami2</button>
+<button [disabled]="!username"
+    (click) = " username = '' ">Reset senza metodo
+</button>

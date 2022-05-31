@@ -13,12 +13,18 @@ export class LezioneElementComponent implements OnInit {
   //   type: string
   // };
 
-//posso, tra le parentesi, passare un alias, cioè un nome identificativo
-  @Input('nomeLezione') element: {
+  //Espongo all'esterno il mio Alias NON la proprietà
+  @Input('lezioneEl') element: {
     nome: string,
     descrizione: string,
     type: string
   };
+//posso, tra le parentesi, passare un alias, cioè un nome identificativo
+  // @Input('nomeLezione') element: {
+  //   nome: string,
+  //   descrizione: string,
+  //   type: string
+  // };
 
   constructor() {
 

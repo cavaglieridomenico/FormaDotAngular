@@ -1,13 +1,22 @@
 <div class="container">
 
-  <app-dashboard></app-dashboard>
+  <p>1. Aggiungi sfondo verde per le lezioni frontali e blu per le lezioni teoriche</p>
+  <p>2. Non aggiungere nulla se i campi input sono vuoti. Stampa in console un avviso</p>
+  <p>3. Crea un lezione.model.ts per gestire le lezioni  </p>
+
+  <h3>Vedere esempio con Local REference per la gestione del form</h3>
+
+
+  <app-dashboard
+  (lezFroCr)="onAddedFront($event)"
+  (lezTeoCr)="onAddedTeo($event)"></app-dashboard>
 
 
   <h2>Lista lezioni</h2>
 
     <app-lezione-element
     *ngFor="let lezione of lezioni"
-    [nomeLezione] = "lezione"></app-lezione-element>
+    [lezioneEl]="lezione"></app-lezione-element>
 
   </div>
 
@@ -16,6 +25,8 @@
 
   <hr>
   <hr>
+
+
   <h1>Qui sotto ci sono gli esempi singoli </h1>
 
   <!-- INPUT con App-prova-Input -->

@@ -9,6 +9,37 @@ import { Persona } from './prova-input/persona.model';
 export class AppComponent {
   title = 'my-app1-comp-databinding';
 
+
+  lezioni = [
+    {
+      nome: "Angular",
+      descrizione: "Corso intensivo Angular",
+      type: "Lezione Frontale"
+    },
+    {
+      nome: "Html & CSS",
+      descrizione: "Rudimenti",
+      type: "Lezione Teorica"
+    }
+  ];
+
+  onAddedFront(lezione: {nomeLezione: string, contenutoLezione: string}){
+    this.lezioni.push({
+      nome: lezione.nomeLezione,
+      descrizione: lezione.contenutoLezione,
+      type: "Lezione Frontale"
+    })
+  }
+
+  onAddedTeo(lezione: {nomeLezione: string, contenutoLezione: string}){
+    this.lezioni.push({
+      nome: lezione.nomeLezione,
+      descrizione: lezione.contenutoLezione,
+      type: "Lezione Teorica"
+    })
+  }
+
+  // Qui sotto ci sono gli esempi singoli
   // nomeDocente = "Dario";
 
   // singole prop
@@ -34,18 +65,6 @@ export class AppComponent {
   //Array
   nomiDocenti = ["Dario", "Giovanni", "Danilo"];
 
-  lezioni = [
-    {
-      nome: "Angular",
-      descrizione: "Corso intensivo Angular",
-      type: "Lezione Frontale"
-    },
-    {
-      nome: "Html & CSS",
-      descrizione: "Rudimenti",
-      type: "Lezione Teorica"
-    }
-  ];
 
 
   //metodo per l'output, la proprietà deve essere identica a quella che invio in output

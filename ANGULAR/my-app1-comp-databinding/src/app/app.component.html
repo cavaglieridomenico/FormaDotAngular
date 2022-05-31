@@ -1,0 +1,74 @@
+<div class="container">
+
+  <p>1. Aggiungi sfondo verde per le lezioni frontali e blu per le lezioni teoriche</p>
+  <p>2. Non aggiungere nulla se i campi input sono vuoti. Stampa in console un avviso</p>
+  <p>3. Crea un lezione.model.ts per gestire le lezioni  </p>
+
+  <h3>Vedere esempio con Local REference per la gestione del form</h3>
+
+
+  <app-dashboard
+  (lezFroCr)="onAddedFront($event)"
+  (lezTeoCr)="onAddedTeo($event)"></app-dashboard>
+
+
+  <h2>Lista lezioni</h2>
+
+    <app-lezione-element
+    *ngFor="let lezione of lezioni"
+    [lezioneEl]="lezione"></app-lezione-element>
+
+  </div>
+
+
+
+
+  <hr>
+  <hr>
+
+
+  <h1>Qui sotto ci sono gli esempi singoli </h1>
+
+  <!-- INPUT con App-prova-Input -->
+  <div class="container">
+    <h1>ESEMPIO INPUT</h1>
+    <h2>Esempio con singola string</h2>
+    <!-- FAre esempio senza oggetto ma solo con una stringa -->
+    <!-- <app-prova-input
+    [nome]="nomeDocente"></app-prova-input> -->
+
+    <app-prova-input
+    *ngFor="let nomeDocente of nomiDocenti"
+    [nome]="nomeDocente"></app-prova-input>
+
+    <!-- UN Input alla volta -->
+    <!-- <app-prova-input
+    [nome] = "nomeDoc"
+    [cognome] = "cognomeDoc"
+    [eta] = "etaDoc"></app-prova-input> -->
+
+    <!-- Un oggetto in input -->
+    <!-- <app-prova-input
+    [persona]="docente"></app-prova-input>
+
+    <app-prova-input
+    [persona]="studente"> </app-prova-input> -->
+
+    <!-- Array in Input -->
+
+    <!-- <app-prova-input
+    [nomi] = "nomiDocenti"></app-prova-input> -->
+
+  </div>
+
+
+  <div class="container">
+    <h1>Esempio OutPUT</h1>
+    <!-- Esempio con OUTPUT, app-prova-output -->
+    <app-prova-output
+    (informazione)="onReciveInfo($event)"
+    (dati)="onRiceviDato($event)"></app-prova-output>
+
+    <!-- <app-prova-output
+    (dati)="onRiceviDato($event)"></app-prova-output> -->
+  </div>

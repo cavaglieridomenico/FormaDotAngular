@@ -38,3 +38,20 @@ type="text"
 
 <p>IL nome del nuovo PC è: {{nomeComputer2}} </p>
 </div>
+
+
+<!-- *ngFor direttiva Built in -->
+<div>
+  <h1>Lista Computers</h1>
+  <ul *ngFor="let comp of computers" >
+    <li>{{comp}}</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- Posso ciclare direttamente su un component mostrando il template dello stesso  -->
+
+<h1>ngFor su component Computer</h1>
+
+<app-computer *ngFor="let computer of computers"></app-computer>

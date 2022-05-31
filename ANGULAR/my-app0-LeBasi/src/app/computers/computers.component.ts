@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-computers',
@@ -15,10 +15,9 @@ export class ComputersComponent implements OnInit {
 
   computers = ['PcMegatron1', 'CompServer'];
 
-  nomeComputer2 = "";
+  nomeComputer2 = "DanielePC" ;
 
   constructor() {
-
     setTimeout(() => {
       this.permessoAggComputer = true;
     }, 2000)
@@ -30,6 +29,7 @@ export class ComputersComponent implements OnInit {
   onCreaComputer(){
     this.computerCreation = "Stai creando un Computer nuovo chiamato: " + this.nomeComputer ;
     this.computerCreated = true;
+
     this.computers.push(this.nomeComputer);
 
     console.log(this.computerCreation);
@@ -41,6 +41,7 @@ export class ComputersComponent implements OnInit {
     this.nomeComputer = nome.target.value
 
     console.log(nome);
+
     console.log((<HTMLInputElement>nome.target).value);
   }
 }

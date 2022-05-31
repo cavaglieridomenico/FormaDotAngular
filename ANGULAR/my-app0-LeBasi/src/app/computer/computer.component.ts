@@ -10,10 +10,12 @@ export class ComputerComponent implements OnInit {
   computerID = 3;
   computerStatus: string;
 
+  computerCreated = false;
+
 
   constructor() {
 
-    this.computerStatus = Math.random() > 0.5 ? 'Online'  : 'Offline'
+    this.computerStatus = Math.random() > 0.5 ? 'Online'  : 'Offline';
   }
 
   ngOnInit(): void {
@@ -24,7 +26,12 @@ export class ComputerComponent implements OnInit {
   }
 
   getComputerStatus(){
-    return this.computerStatus;
+    // return this.computerStatus;
+    if(this.computerStatus === 'Online'){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 

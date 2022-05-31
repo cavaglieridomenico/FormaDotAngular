@@ -56,14 +56,25 @@ export class AppComponent {
   // }
 
   // Si può anche fare in questo modo
-  onReciveInfo(info){
-    console.log(info);
-    console.log(info.descrizioneProg);
-    console.log(info.nomeProg);
+  onReciveInfo(info: {descrizioneProg: string, nomeProg:string}){
+    // console.log(info);
+    // console.log(info.descrizioneProg);
+    // console.log(info.nomeProg);
+    if(info.descrizioneProg && info.nomeProg){
+      console.log("Il corso ha le seguenti informazioni: " + info.descrizioneProg +
+      ' ' + info.nomeProg);
+    }else{
+      console.log("Info non pervenute");
+    }
   }
 
-  onRiceviDato(dati){
+  onRiceviDato(dati: {datiSfusi: string}){
     console.log(dati);
+    if(dati.datiSfusi){
+      console.log("Questi sono dati Sfusi: " + dati.datiSfusi);
+    }else{
+      console.log("Dati non pervenuti");
+    }
 
   }
 }

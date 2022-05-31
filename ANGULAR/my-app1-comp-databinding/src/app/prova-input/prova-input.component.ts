@@ -8,13 +8,13 @@ import { Persona } from './persona.model';
 })
 export class ProvaInputComponent implements OnInit {
   // per ricevere il nome dall'esterno devo "decorare" la propr con il @Input()
-  // @Input() nome: string;
+  @Input() nome: string;
   // @Input() cognome: string;
   // @Input() eta: number;
 
   // @Input() persona: Persona;
 
-  @Input() nomi: string[];
+  // @Input() nomi: string[];
 
 
 

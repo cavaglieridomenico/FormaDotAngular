@@ -4,17 +4,6 @@
 
 
   <h2>Lista lezioni</h2>
-  <!--
-    <ul>
-      <li *ngFor="let lezione of lezioni">
-        {{lezione.nome}} - {{lezione.descrizione}}
-      </li>
-    </ul> -->
-
-    <!-- La prop element è definita nel figlio che io pongo uguale ad una propr, lezione, definita nel genitore -->
-    <!-- <app-lezione-element
-    *ngFor="let lezione of lezioni"
-    [element] = "lezione"></app-lezione-element> -->
 
     <app-lezione-element
     *ngFor="let lezione of lezioni"
@@ -22,7 +11,12 @@
 
   </div>
 
+
+
+
   <hr>
+  <hr>
+  <h1>Qui sotto ci sono gli esempi singoli </h1>
 
   <!-- INPUT con App-prova-Input -->
   <div class="container">
@@ -31,6 +25,10 @@
     <!-- FAre esempio senza oggetto ma solo con una stringa -->
     <!-- <app-prova-input
     [nome]="nomeDocente"></app-prova-input> -->
+
+    <app-prova-input
+    *ngFor="let nomeDocente of nomiDocenti"
+    [nome]="nomeDocente"></app-prova-input>
 
     <!-- UN Input alla volta -->
     <!-- <app-prova-input
@@ -47,8 +45,8 @@
 
     <!-- Array in Input -->
 
-    <app-prova-input
-    [nomi] = "nomiDocenti"></app-prova-input>
+    <!-- <app-prova-input
+    [nomi] = "nomiDocenti"></app-prova-input> -->
 
   </div>
 
@@ -57,8 +55,9 @@
     <h1>Esempio OutPUT</h1>
     <!-- Esempio con OUTPUT, app-prova-output -->
     <app-prova-output
-    (informazione)="onReciveInfo($event)"></app-prova-output>
-
-    <app-prova-output
+    (informazione)="onReciveInfo($event)"
     (dati)="onRiceviDato($event)"></app-prova-output>
+
+    <!-- <app-prova-output
+    (dati)="onRiceviDato($event)"></app-prova-output> -->
   </div>

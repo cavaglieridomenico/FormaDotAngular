@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Lezione } from '../shared/lezione.model';
 
 
 @Component({
@@ -9,8 +10,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   //lezTeoCr è un alias, nell'app component espongo l'alias non il nome della mia prop
-  @Output('lezTeoCr') lezioneCreataTeo =
-  new EventEmitter<{nomeLezione: string, contenutoLezione:string}>();
+  @Output('lezTeoCr') lezioneCreataTeo = new EventEmitter<Lezione>();
 
   @Output('lezFroCr') lezioneCreataFront = new EventEmitter<{nomeLezione: string, contenutoLezione:string}>()
 
@@ -25,6 +25,8 @@ export class DashboardComponent implements OnInit {
   }
 
   onAddTeorica(){
+    let lezione = new Lezione(this.newNomeLezione, this.newDescLezione, 'Lezione Teorica');
+
     console.log(this.newNomeLezione + ' - ' + this.newDescLezione);
     if(this.newNomeLezione === '' && this.newDescLezione === ''){
       console.log("Non stai aggiungendo nessuna lezione");
@@ -32,10 +34,7 @@ export class DashboardComponent implements OnInit {
 
     }else{
       this.avviso = '';
-    this.lezioneCreataTeo.emit({
-      nomeLezione: this.newNomeLezione,
-      contenutoLezione: this.newDescLezione
-    });
+      this.lezioneCreataTeo.emit(lezione);
   }
 
   }
@@ -43,12 +42,11 @@ export class DashboardComponent implements OnInit {
   onAddFrontale(){
     if(this.newNomeLezione === '' && this.newDescLezione === ''){
       console.log("Non stai aggiungendo nessuna lezione");
-      this.avviso = " NOn stai compilando bene i campi";
+      this.avviso = "Non stai compilando bene i campi";
 
     }else{
       this.avviso = '';
       this.lezioneCreataFront.emit({
-
       nomeLezione: this.newNomeLezione,
       contenutoLezione: this.newDescLezione
     })

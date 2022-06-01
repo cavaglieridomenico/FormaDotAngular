@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Persona } from './prova-input/persona.model';
+import { Lezione } from './shared/lezione.model';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +11,11 @@ export class AppComponent {
   title = 'my-app1-comp-databinding';
 
 
-  lezioni = [
+  lezioni: Lezione[] = [
     {
       nome: "Angular",
-      descrizione: "Corso intensivo Angular",
+      descrizione: "Decorator Input & Output",
       type: "Lezione Frontale"
-    },
-    {
-      nome: "Html & CSS",
-      descrizione: "Rudimenti",
-      type: "Lezione Teorica"
     }
   ];
 
@@ -31,12 +27,9 @@ export class AppComponent {
     })
   }
 
-  onAddedTeo(lezione: {nomeLezione: string, contenutoLezione: string}){
-    this.lezioni.push({
-      nome: lezione.nomeLezione,
-      descrizione: lezione.contenutoLezione,
-      type: "Lezione Teorica"
-    })
+  //spostare la logica del type nel component dashboard
+  onAddedTeo(lezione: Lezione){
+    this.lezioni.push(lezione);
   }
 
   // Qui sotto ci sono gli esempi singoli

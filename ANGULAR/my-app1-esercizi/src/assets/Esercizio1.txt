@@ -1,0 +1,24 @@
+1. Crea un pulsante "Mostra Dettagli"
+2. Cra un paragrafo con i dettagli da mostrare al click sul pulsante (es. password segreta: "Gennaro")
+3. Mostra e nascondi questo paragrafo dei dettagli al click sul pulsante
+4. Conta, inserendo in un array, i click sul pulsante e mostrali a video
+5. Inizia con 5 click di default, tutti i successivi avranno il background di colore blu e font bianco
+
+OSS: Si può svolgere l'esercizio con un singolo component oppure on due component separati che comunicano tra loro (@pulsanteComponent  ---  @paragrafoComponent)
+
+-----------@EsercizioComponent----------------------
+PULSANTONE
+
+password segreta: Gennarino
+
+1
+2
+3
+4
+5
+6(bg Blu - fontBianco)
+7(bg Blu - fontBianco)
+8(bg Blu - fontBianco)
+9(bg Blu - fontBianco)
+10(bg Blu - fontBianco)
+------------------------------------

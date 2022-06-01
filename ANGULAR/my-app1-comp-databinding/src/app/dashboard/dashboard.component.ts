@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   newNomeLezione = "";
   newDescLezione = "";
 
+  avviso = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -24,17 +26,32 @@ export class DashboardComponent implements OnInit {
 
   onAddTeorica(){
     console.log(this.newNomeLezione + ' - ' + this.newDescLezione);
+    if(this.newNomeLezione === '' && this.newDescLezione === ''){
+      console.log("Non stai aggiungendo nessuna lezione");
+      this.avviso = " NOn stai compilando bene i campi";
+
+    }else{
+      this.avviso = '';
     this.lezioneCreataTeo.emit({
       nomeLezione: this.newNomeLezione,
       contenutoLezione: this.newDescLezione
-    })
+    });
+  }
 
   }
 
   onAddFrontale(){
-    this.lezioneCreataFront.emit({
+    if(this.newNomeLezione === '' && this.newDescLezione === ''){
+      console.log("Non stai aggiungendo nessuna lezione");
+      this.avviso = " NOn stai compilando bene i campi";
+
+    }else{
+      this.avviso = '';
+      this.lezioneCreataFront.emit({
+
       nomeLezione: this.newNomeLezione,
       contenutoLezione: this.newDescLezione
     })
+  }
   }
 }

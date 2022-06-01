@@ -1,4 +1,7 @@
-<div class="">
+<div [ngClass]="{
+bgVerde: element.type === 'Lezione Frontale',
+bgBlu: element.type === 'Lezione Teorica'
+}">
   <h3>{{element.nome}}</h3>
   <p>{{element.descrizione}}</p>
   <p>{{element.type}} </p>

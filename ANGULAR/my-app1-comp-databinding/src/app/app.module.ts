@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LezioneElementComponent } from './lezione-element/lezione-element.component';
 import { ProvaInputComponent } from './prova-input/prova-input.component';
 import { ProvaOutputComponent } from './prova-output/prova-output.component';
+import { EsempioLocalRefComponent } from './esempio-local-ref/esempio-local-ref.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ProvaOutputComponent } from './prova-output/prova-output.component';
     DashboardComponent,
     LezioneElementComponent,
     ProvaInputComponent,
-    ProvaOutputComponent
+    ProvaOutputComponent,
+    EsempioLocalRefComponent
   ],
   imports: [
     BrowserModule,

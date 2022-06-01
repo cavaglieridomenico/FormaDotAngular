@@ -1,0 +1,32 @@
+<div class="row">
+
+  <p>Gestirò il form senza il principio del two-way databinding </p>
+  <p>Gestisco tutto attraverso le local reference</p>
+  <p>Solo Local Reference</p>
+  <div class="col-12">
+    <label>Parola:</label>
+    <input
+    type="text" class="form-control"
+    #parola>   <!--#parola si chiama Local Reference-->
+
+    <button class="btn btn-dark"
+    (click)="onAddParola(parola)">Aggiungi Parola</button>
+
+
+    <p>{{parola.value}}</p>
+    <p>{{newParola}}</p>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <p>GEstisco il form attraverso @ViewChild() </p>
+  <label>Frase:</label>
+  <input type="text" class="form-control"
+  #frase>
+
+  <button class="btn btn-danger"
+  (click) = "onAddFrase()"> Aggiungi Frase</button>
+
+</div>

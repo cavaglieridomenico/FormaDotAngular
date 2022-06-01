@@ -1,0 +1,8 @@
+PARI e DISPARI
+1. Crea 3 nuovi component: Pari, Dispari, GameControl
+2. Game Control deve avere due pulsanti: Start e Stop (Start fa partire il gioco , Stop lo interrompe)
+3. Al click sullo Start, un evento (che trattiene un numero incrementale) deve essere emesso ogni secondo (setInterval, setTimeout)
+4. L'evento deve essere visibile fuori dal component
+5. Quando Clicco su Stop devo fermare il gioco e si deve interrompere l'emissione degli eventi
+
+OSS: Per ogni numero generato deve essere generato un component Pari o dispari, per visualizzarli fornisci uno stile css come ti sembra più opportuno

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recensione } from './recensione.model';
 
 @Component({
   selector: 'app-recensione',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecensioneComponent implements OnInit {
 
+  miaRecensione: Recensione;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.miaRecensione.like();
+
   }
 
 }

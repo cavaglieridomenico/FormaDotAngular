@@ -1,14 +1,18 @@
 <div class="container">
   <div class="row">
 
-    <label>Nome:</label>
-    <input type="text" class="form-control">
-    <label>Link:</label>
-    <input type="text" class="form-control">
-    <label>Immagine:</label>
-    <input type="text" class="form-control">
+    <div class="col-12">
 
-    <button class="btn btn-success">Aggiungi</button>
+      <label>Nome:</label>
+      <input type="text" class="form-control" #nome>
+      <label>Link:</label>
+      <input type="text" class="form-control" #link>
+      <label>Immagine:</label>
+      <input type="text" class="form-control" #immagine>
 
+      <button class="btn btn-success mt-2"
+      (click) = "onAddArticolo()">Aggiungi</button>
+
+    </div>
   </div>
 </div>

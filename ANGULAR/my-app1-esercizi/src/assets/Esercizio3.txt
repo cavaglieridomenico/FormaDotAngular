@@ -1,0 +1,10 @@
+Gestore RECENSIONI
+Da gestire principalmente con le local reference
+1. Crea un form per l'inserimento di un prodotto, libro, film. 2 campi: nome, link
+2. Aggiungo il prodotto ad una lista che verrà stampata sotto.
+3. Nel singolo item della lista compariranno due pulsanti, link (basta che siano cliccabili): voteUp (+1) ; voteDown(-1).
+4. Nel singolo item ci sarà un <p> che registra il numero di voti, unico. Pratiamente un contatore di voti
+5. Inserisci, al fondo, un pulsante "Stampa Resoconto" che al click stampa la situazione attuale dei voti e degli item in console.
+6. libertà di espressione dal punto vista stilistico, se vuoi puoi aggiungere un'immagine dell'item (aggiungi un altro campo nel form)
+
+ATT: Obbligatorio l'utilizzo di un model che descriva il singolo item

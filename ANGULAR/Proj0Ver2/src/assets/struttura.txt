@@ -1,0 +1,9 @@
+-Header
+-Ricette
+    -Dettaglio-Ricette
+    -lista-Ricette
+          -item-ricetta
+
+
+-shopping-list
+    -shopping-edit

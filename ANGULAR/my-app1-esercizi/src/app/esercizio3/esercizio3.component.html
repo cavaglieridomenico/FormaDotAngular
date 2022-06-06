@@ -11,8 +11,17 @@
       <input type="text" class="form-control" #immagine>
 
       <button class="btn btn-success mt-2"
-      (click) = "onAddArticolo()">Aggiungi</button>
+      (click)="addRecensione(nome, link, immagine)">Aggiungi</button>
 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-recensione
+      *ngFor="let recensione of recensioni"
+      [singolaRecensione]="recensione"
+      ></app-recensione>
     </div>
   </div>
 </div>

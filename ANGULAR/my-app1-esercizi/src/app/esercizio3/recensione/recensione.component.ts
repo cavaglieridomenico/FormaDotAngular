@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Recensione } from './recensione.model';
 
 @Component({
@@ -8,13 +8,19 @@ import { Recensione } from './recensione.model';
 })
 export class RecensioneComponent implements OnInit {
 
-  miaRecensione: Recensione;
+  @Input() singolaRecensione: Recensione;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.miaRecensione.like();
+  }
 
+  onVoteUp(){
+    this.singolaRecensione.like();
+  }
+
+  onVoteDown(){
+    this.singolaRecensione.dislike()
   }
 
 }

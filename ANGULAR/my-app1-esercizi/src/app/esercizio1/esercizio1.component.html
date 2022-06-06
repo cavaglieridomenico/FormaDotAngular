@@ -1,1 +1,17 @@
-<p>esercizio1 works!</p>
+<div class="container">
+
+  <h1>Mostra Password - Es 1</h1>
+  <button class="btn btn-danger"
+  (click)="onMostra()">Mostra</button>
+
+  <p *ngIf="mostraPass">{{frase}}</p>
+
+  <div
+  *ngFor="let itemLog of logs; let i = index"
+  [ngStyle]="{backgroundColor: itemLog > 5 ? 'blue' : transparent}"
+  [ngClass]="{'testo-bianco': itemLog > 5}">
+
+  {{itemLog}} click numero : {{i}}
+</div>
+</div>
+

@@ -1,1 +1,24 @@
-<p>recensione works!</p>
+<div class="card">
+  <div class="card-title">
+    {{singolaRecensione.title}}
+  </div>
+
+  <div class="link">
+    {{singolaRecensione.link}}
+  </div>
+
+  <div class="card-body">
+    <img src="{{singolaRecensione.image}}">
+  </div>
+
+  <div class="card-body">
+    Like: {{singolaRecensione.upLike}}
+    <br>
+    Dislike: {{singolaRecensione.dwDislike}}
+  </div>
+
+  <ul class="list-group">
+    <button class="btn btn-success" (click)="onVoteUp()">Like</button>
+    <button class="btn btn-danger" (click)="onVoteDown()">Dislike</button>
+  </ul>
+</div>

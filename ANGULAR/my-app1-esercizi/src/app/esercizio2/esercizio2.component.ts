@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Esercizio2Component implements OnInit {
 
+  numeriPari: number[] = [];
+  numeriDisp: number[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onFiredNum(firedNumber: number){
+    console.log(firedNumber);
+    if(firedNumber % 2 == 0){
+      this.numeriPari.push(firedNumber);
+    }else{
+      this.numeriDisp.push(firedNumber);
+    }
+
+  }
 }

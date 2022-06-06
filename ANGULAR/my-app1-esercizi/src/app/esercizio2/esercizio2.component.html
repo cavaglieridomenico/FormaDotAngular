@@ -1,1 +1,26 @@
-<p>esercizio2 works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-game-control (num)="onFiredNum($event)"></app-game-control>
+     </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col">
+      <h3>Dispari</h3>
+      <app-dispari
+      *ngFor="let numD of numeriDisp"
+      [number] = 'numD'></app-dispari>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h3>Pari</h3>
+      <app-pari
+      *ngFor="let numP of numeriPari"
+      [number] = 'numP'></app-pari>
+    </div>
+  </div>
+</div>

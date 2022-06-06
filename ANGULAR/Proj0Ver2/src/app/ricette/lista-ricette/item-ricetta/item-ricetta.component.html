@@ -1,1 +1,25 @@
-<p>item-ricetta works!</p>
+<a href="#"
+(click)="onSelected()">
+
+  <h3>{{ricetta.nome}}</h3>
+  <p>{{ricetta.descrizione}}</p>
+  <!-- <img src="{{ricetta.image}}" alt=""> -->
+  <img [src]="ricetta.image" alt="">
+
+  <!-- trasformare gli allergeni in un array  -->
+  <div *ngIf="ricetta.allergeni; else noAllergeni">
+    <p>Allergeni: </p>
+    <li *ngFor="let allergene of ricetta.allergeni">
+      {{allergene}}
+    </li>
+
+  </div>
+
+
+  <ng-template #noAllergeni>
+    <p>Non ci sono allergeni</p>
+  </ng-template>
+
+  <p><strong>Prezzo: {{ricetta.prezzo | currency: 'EUR'}} </strong> </p>
+
+</a>

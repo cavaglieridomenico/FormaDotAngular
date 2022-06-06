@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Proj0Ver1';
+  title = 'Proj0Ver2';
+
+  paginaSelezionata: string;
+
+  onNaviga(pagina: string){
+    this.paginaSelezionata = pagina
+  }
+
+
 }

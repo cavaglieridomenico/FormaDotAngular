@@ -1,0 +1,27 @@
+<h2>Queste sono le nostre ricette</h2>
+
+<div class="col">
+
+  <div class="divRicetta" *ngFor="let ricetta of ricette">
+    <h3>{{ricetta.nome}}</h3>
+    <p>{{ricetta.descrizione}}</p>
+    <!-- <img src="{{ricetta.image}}" alt=""> -->
+    <img [src] = "ricetta.image" alt="">
+
+    <!-- trasformare gli allergeni in un array  -->
+    <div *ngIf="ricetta.allergeni; else noAllergeni" >
+      <p>Allergeni: </p>
+      <li *ngFor="let allergene of ricetta.allergeni">
+        {{allergene}}
+      </li>
+
+    </div>
+
+
+    <ng-template #noAllergeni>
+      <p>Non ci sono allergeni</p>
+    </ng-template>
+
+    <p><strong>Prezzo: {{ricetta.prezzo | currency: 'EUR'}} </strong> </p>
+  </div>
+</div>

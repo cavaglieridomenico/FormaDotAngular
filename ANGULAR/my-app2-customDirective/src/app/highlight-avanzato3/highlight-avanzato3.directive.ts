@@ -23,5 +23,7 @@ export class HighlightAvanzato3Directive implements OnInit{
 
   @HostListener('mouseleave') mouseOut(eventData: Event){
     this.coloreSfondo = this.coloreDef
+    let newTxt = this.renderer.createText("Qualcosa");
+    this.renderer.appendChild(this.elementRef.nativeElement, newTxt)
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Ricetta } from '../ricetta.model';
 
 
@@ -10,6 +10,7 @@ import { Ricetta } from '../ricetta.model';
 export class ListaRicetteComponent implements OnInit {
 
   ricette: Ricetta[]
+  @Output() ricettaFuSelezionata = new EventEmitter<Ricetta>()
   // = [
   //   new Ricetta("Pasta e Fagioli", "Un tipico piatto all'italiana", "https://via.placeholder.com/150", 12),
   //   new Ricetta("Carbonara", "Da mangiare solo a Roma", "https://via.placeholder.com/150", 13, "Uova"),
@@ -43,4 +44,9 @@ export class ListaRicetteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onRicettaSelezionata(ricetta: Ricetta){
+    console.log(ricetta);
+    this.ricettaFuSelezionata.emit(ricetta)
+  }
 }

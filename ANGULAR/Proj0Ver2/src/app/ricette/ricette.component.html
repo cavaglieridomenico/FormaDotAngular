@@ -1,12 +1,19 @@
 <h1>App ricette</h1>
 
 <div class="col-6">
-  <app-lista-ricette></app-lista-ricette>
+  <app-lista-ricette
+  (ricettaFuSelezionata)="ricettaSelez = $event"></app-lista-ricette>
 </div>
 
 <div class="col-6">
 
-  <app-dettaglio-ricette></app-dettaglio-ricette>
+  <app-dettaglio-ricette
+  *ngIf="ricettaSelez; else noInfo"
+  [ricetta]='ricettaSelez'></app-dettaglio-ricette>
+
+  <ng-template #noInfo>
+    Per favore, seleziona una ricetta
+  </ng-template>
 
 </div>
 

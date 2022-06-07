@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <!-- Non posso avere due direttive built-in nello stesso punto -->
+      <!-- <ul class="list-group">
+        <li *ngFor="let number of numbers"
+            *ngIf="number % 2 == 0">
+          {{number}}
+        </li>
+      </ul> -->
+
+      <ul class="list-group">
+        <div *ngIf="soloPari">
+          <li class="list-group-item"
+          [ngClass]="{pari: number % 2 == 0 }"
+          [ngStyle]="{backgroundColor: number % 2 !== 0 ? 'yellow': 'transparent'}"
+          *ngFor="let number of numbers">
+          {{number}}
+          </li>
+        </div>
+      </ul>
+
+      <hr>
+
+
+      <h2 appHighlightBase>Applico sfondo con una mia Directive</h2>
+
+      <h2 appHighlightIntermedio>Directive Intermedio</h2>
+
+    </div>
+  </div>
+</div>

@@ -4,12 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HighlightBaseDirective } from './highlight-base/highlight-base.directive';
 import { HighlightIntermedioDirective } from './highlight-intermedio/highlight-intermedio.directive';
+import { HighlightAvanzatoDirective } from './highlight-avanzato/highlight-avanzato.directive';
+import { HighlightAvanzato2Directive } from './highlight-avanzato2/highlight-avanzato2.directive';
+import { HighlightAvanzato3Directive } from './highlight-avanzato3/highlight-avanzato3.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HighlightBaseDirective,
-    HighlightIntermedioDirective
+    HighlightIntermedioDirective,
+    HighlightAvanzatoDirective,
+    HighlightAvanzato2Directive,
+    HighlightAvanzato3Directive
   ],
   imports: [
     BrowserModule

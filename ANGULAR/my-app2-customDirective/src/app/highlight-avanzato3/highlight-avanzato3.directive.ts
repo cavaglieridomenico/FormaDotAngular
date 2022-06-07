@@ -23,6 +23,5 @@ export class HighlightAvanzato3Directive implements OnInit{
 
   @HostListener('mouseleave') mouseOut(eventData: Event){
     this.coloreSfondo = this.coloreDef
-
   }
 }

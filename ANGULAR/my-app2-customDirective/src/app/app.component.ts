@@ -10,4 +10,6 @@ export class AppComponent {
 
   numbers = [3,6,7,9];
   soloPari = true;
+
+  value=12
 }

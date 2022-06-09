@@ -2,19 +2,20 @@
   <div class="col-12">
     <div class="mb-3">
       <label for="name">Nome Account </label>
-      <input type="text">
+      <input class="form-control" type="text" #nome>
     </div>
     <div class="mb-3">
       <label for="tipo">Tipo</label>
+      <input class="form-control" type="text" #tipo>
     </div>
     <div class="mb-3">
-      <select #status>
+      <select class="form-control" #status>
         <option value="Active">Active</option>
         <option value="Inactive">Inactive</option>
         <option value="Hidden">Hidden</option>
       </select>
     </div>
 
-    <button class="btn btn-primary">Aggiungi Account</button>
+    <button class="btn btn-primary" (click)="onAddAccount(nome.value, tipo.value, status.value)">Aggiungi Account</button>
   </div>
 </div>

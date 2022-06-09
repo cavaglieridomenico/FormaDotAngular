@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NewAccountComponent } from './new-account/new-account.component';
-import { AccountComponent } from './account/account.component';
+import { LogDataComponent } from './log-data/log-data.component';
+import { UtenteComponent } from './utente/utente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewAccountComponent,
-    AccountComponent
+    LogDataComponent,
+    UtenteComponent
   ],
   imports: [
     BrowserModule

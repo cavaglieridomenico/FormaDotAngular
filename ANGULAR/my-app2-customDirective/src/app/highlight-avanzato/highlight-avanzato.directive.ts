@@ -17,6 +17,7 @@ export class HighlightAvanzatoDirective implements OnInit{
     this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'red');
   }
 
+
   @HostListener('mouseleave') mouseOut(eventData: Event){
     this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
   }

@@ -20,6 +20,9 @@ export class LogDataComponent implements OnInit {
 
     this.logService.aggiungiUtnte('Paolo', 'Amministratore');
     this.utenze = this.logService.utenti;
+
+    //per il superUser private
+    this.logService.setSuperUser("Mimmo", "Tecnico Specializzato");
     this.superUser = this.logService.getSuperUser();
   }
 

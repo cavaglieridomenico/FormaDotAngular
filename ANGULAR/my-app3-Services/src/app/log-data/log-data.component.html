@@ -3,7 +3,11 @@
   {{user.nome}} - tipo: {{user.tipo}}
 </li>
 
-<h4>Super user: {{superUser.nome}} -  tipo: {{superUser.tipo}}</h4>
+<h4 *ngIf="superUser; else noSuper">Super user: {{superUser.nome}} -  tipo: {{superUser.tipo}}</h4>
+<ng-template #noSuper>
+<h4>Non ci sono super User</h4>
+</ng-template>
+
 <hr>
 <button (click)="addUserLog()">Aggiungi Utente Log</button>
 <button (click)="modUserType()">Modifica Tipo</button>

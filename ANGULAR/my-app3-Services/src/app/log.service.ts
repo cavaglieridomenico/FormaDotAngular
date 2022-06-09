@@ -23,18 +23,27 @@ export class LogService {
   ];
 
 
-  private superUser: Utente = {
-    nome: "Paperino",
-    tipo: "Super-User"
-  };
+  // private superUser: Utente = {
+  //   nome: "Paperino",
+  //   tipo: "Super-User"
+  // };
+
+  private superUser: Utente;
 
   getSuperUser(){
+    if(this.superUser){
     return this.superUser;
+    }else{
+      return null;
+    }
   }
 
   setSuperUser(nome: string, tipo: string){
-    let superU = new Utente(nome, tipo);
-    return superU;
+    this.superUser = {
+      nome: nome,
+      tipo: tipo
+    }
+
   }
 
 

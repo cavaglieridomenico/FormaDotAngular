@@ -28,6 +28,26 @@
 
       <h2 appHighlightIntermedio>Directive Intermedio</h2>
 
+      <h2 appHighlightAvanzato>Directive Avanzato</h2>
+
+      <h2 appHighlightAvanzato2>Directive Avanzato 2</h2>
+
+      <h2 appHighlightAvanzato3
+      [coloreDef]="'yellow'"
+      [coloreHigh]="'purple'">Directive Avanzato 3</h2>
+
+
+      <hr>
+
+      <h1>Switch</h1>
+      <div [ngSwitch] = "value">
+        <p *ngSwitchCase="5"> Il value è di 5</p>
+        <p *ngSwitchCase="10"> Il value è di 10</p>
+        <p *ngSwitchCase="100"> Il value è di 100</p>
+        <p *ngSwitchCase="1000"> Il value è di 1000</p>
+        <p *ngSwitchDefault>Non esiste il value corrispondente</p>
+      </div>
+
     </div>
   </div>
 </div>

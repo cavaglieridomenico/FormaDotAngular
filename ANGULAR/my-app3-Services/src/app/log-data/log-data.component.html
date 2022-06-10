@@ -1,0 +1,13 @@
+<p>log-data works!</p>
+<li *ngFor="let user of utenze">
+  {{user.nome}} - tipo: {{user.tipo}}
+</li>
+
+<h4 *ngIf="superUser; else noSuper">Super user: {{superUser.nome}} -  tipo: {{superUser.tipo}}</h4>
+<ng-template #noSuper>
+<h4>Non ci sono super User</h4>
+</ng-template>
+
+<hr>
+<button (click)="addUserLog()">Aggiungi Utente Log</button>
+<button (click)="modUserType()">Modifica Tipo</button>

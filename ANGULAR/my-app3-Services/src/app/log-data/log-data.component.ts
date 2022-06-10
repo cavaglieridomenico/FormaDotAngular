@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from '../log.service';
+import { CounterService } from '../shared/counter.service';
 import { Utente } from '../shared/utente.model';
 
 @Component({
@@ -12,7 +13,7 @@ export class LogDataComponent implements OnInit {
   utenze: Utente[];
   superUser: Utente;
 
-  constructor(private logService: LogService) { }
+  constructor(private logService: LogService, private counterServ: CounterService) { }
 
   ngOnInit(): void {
     this.logService.scriviInConsole('component LogData');
@@ -24,6 +25,8 @@ export class LogDataComponent implements OnInit {
     //per il superUser private
     this.logService.setSuperUser("Mimmo", "Tecnico Specializzato");
     this.superUser = this.logService.getSuperUser();
+
+    this.counterServ.contaUtenti();
   }
 
   addUserLog(){

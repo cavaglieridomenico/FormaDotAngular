@@ -43,7 +43,6 @@ export class LogService {
       nome: nome,
       tipo: tipo
     }
-
   }
 
 

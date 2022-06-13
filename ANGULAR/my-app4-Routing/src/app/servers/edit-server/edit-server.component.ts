@@ -36,9 +36,8 @@ export class EditServerComponent implements OnInit {
 
   }
 
-  onAggiornaServer(nome, status){
-    this.serverService.aggiornaServer(this.server.id, {nome: nome, status: status});
-
+  onAggiornaServer(){
+    this.serverService.aggiornaServer(this.server.id, {nome: this.nomeServer, status: this.statusServer});
     console.log('ok, Modifica avvenuta ');
     this.modificheSalvate = true;
     this.router.navigate(['../'], {relativeTo: this.route});

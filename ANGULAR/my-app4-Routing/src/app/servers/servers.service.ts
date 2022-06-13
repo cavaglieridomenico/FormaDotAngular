@@ -31,7 +31,6 @@ export class ServersService {
     }
   ]
 
-  constructor() {}
 
   getServers(){
     return this.servers;
@@ -42,7 +41,7 @@ export class ServersService {
       (s) => {
         return s.id === id
       }
-    )
+      )
     return server;
   }
 
@@ -52,13 +51,14 @@ export class ServersService {
         return s.id === id
       }
 
-    );
+      );
 
-    if(server){
-      server.nome = serverInfoMod.nome;
-      server.status = serverInfoMod.status;
+      if(server){
+        server.nome = serverInfoMod.nome;
+        server.status = serverInfoMod.status;
+      }
     }
+
+    constructor() {}
+
   }
-
-
-}

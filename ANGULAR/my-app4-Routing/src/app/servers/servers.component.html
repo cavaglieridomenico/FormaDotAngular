@@ -1,12 +1,26 @@
-
-
-  <p>servers works!</p>
-
   <h2>Lista server</h2>
-  <app-server></app-server>
+  <div class="row">
+    <div class="col-12">
+      <div class="list-group">
+        <a href="#" class="list-group-item"
+        *ngFor="let server of servers"
+        [routerLink]="['/servers', server.id]">
+      {{server.id}} - {{server.nome}} - {{server.status}}
+      </a>
+      </div>
+    </div>
+  </div>
 
-  <h2>Modifica Server</h2>
-  <app-edit-server></app-edit-server>
+  <!-- In questo router-outlet voglio mostrare il dettaglio e poi la modifica del server -->
+  <div class="container">
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+  <!--
+    <h2>Modifica Server</h2>
+    <app-edit-server></app-edit-server> -->
 
   <!-- Voglio renderizzare il mio singolo server per cui devo cambiare la rotta in app.routinModule -->
   <!-- <router-outlet></router-outlet> -->

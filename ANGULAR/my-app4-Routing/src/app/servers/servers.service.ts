@@ -1,13 +1,14 @@
 import {
   Injectable
 } from '@angular/core';
+import { Server } from './server/server.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServersService {
 
-  private servers: [
+  private servers: Server[] =[
     {
       id: 1,
       nome: "Produzione",
@@ -42,9 +43,22 @@ export class ServersService {
         return s.id === id
       }
     )
-
     return server;
   }
 
-  //Modifica del server, dopo
+  aggiornaServer(id: number, serverInfoMod: {nome: string, status: string}){
+    const server = this.servers.find(
+      (s) => {
+        return s.id === id
+      }
+
+    );
+
+    if(server){
+      server.nome = serverInfoMod.nome;
+      server.status = serverInfoMod.status;
+    }
+  }
+
+
 }

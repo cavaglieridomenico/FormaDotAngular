@@ -8,7 +8,8 @@ import { Ricetta } from "./ricetta.model";
 })
 export class RicettaService{
 
-  ricettaSelezionata = new EventEmitter<Ricetta>();
+ ricettaSelezionata = new EventEmitter<Ricetta>();
+
 
 
   private ricette: Ricetta[] = [
@@ -57,6 +58,9 @@ export class RicettaService{
     return this.ricette;
   }
 
+  getRicetta(id: number){
+    return this.ricette[id];
+  }
 
   addIngredientiToShoppingList(ingredienti: Ingrediente[]){
     //questo metodo aggiunge ingredienti alla lista della spesa

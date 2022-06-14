@@ -4,7 +4,9 @@
       <div class="list-group">
         <a href="#" class="list-group-item"
         *ngFor="let server of servers"
-        [routerLink]="['/servers', server.id]">
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{permettiMod: server.id === 2 ? true: false}"
+        fragment = "loading">
       {{server.id}} - {{server.nome}} - {{server.status}}
       </a>
       </div>
@@ -14,7 +16,6 @@
   <!-- In questo router-outlet voglio mostrare il dettaglio e poi la modifica del server -->
   <div class="container">
     <router-outlet></router-outlet>
-
   </div>
 
 

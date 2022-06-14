@@ -34,12 +34,14 @@
       </div>
     </div>
   </nav>
+
+  <p *ngIf="loggedIn; else noLog">Sei Loggato</p>
+  <ng-template #noLog>Non sei Loggato</ng-template>
 </div>
 
-<!-- SELETTORE PER ATTUARE LA ROUTING:
-dentro router-outelet verranno renderizzati i singoli component-->
-
 <div class="container">
+  <!-- SELETTORE PER ATTUARE LA ROUTING:
+    dentro router-outelet verranno renderizzati i singoli component-->
 
   <router-outlet></router-outlet>
 

@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
           if(authenticated){
             return true;
           }else{
-            this.router.navigate(['/servers']); //Destinazione della mia rotta, home
+            this.router.navigate(['/']); //Destinazione della mia rotta, home
             return false;
           }
         }

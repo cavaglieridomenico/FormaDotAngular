@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  loggedIn = true;
+  loggedIn = false;
 
   constructor() { }
 
@@ -22,11 +22,16 @@ export class AuthService {
   }
 
 
+
   //Questi metodi da utilizzare con pulsanti da qualche
   login(){
     this.loggedIn = true;
+    console.log("Sei Loggato");
+
   }
   logout(){
     this.loggedIn = false;
+    console.log("Non sei Loggato");
+
   }
 }

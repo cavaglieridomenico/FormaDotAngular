@@ -1,0 +1,11 @@
+<div *ngIf="interrutore; else noLog">
+  <h2 class="bg-info">Sei Loggato</h2>
+</div>
+
+<ng-template #noLog>
+  <h2 class="bg-danger">Non sei loggato</h2>
+</ng-template>
+
+
+<button [disabled]="interrutore" class="btn btn-primary" (click)="onLogin()">Login</button>
+<button [disabled]="!interrutore" class="btn btn-danger" (click)="onLogout()">Logout</button>

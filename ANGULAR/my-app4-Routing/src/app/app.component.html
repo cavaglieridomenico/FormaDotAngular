@@ -30,13 +30,20 @@
             [routerLink]="['/servers']"
             >Servers</a>
           </li>
+
+          <li class="nav-item"
+          routerLinkActive="active">
+            <a class="nav-link " aria-current="page"
+            [routerLink]="['/login']"
+            >Login</a>
+          </li>
+
+
         </ul>
       </div>
     </div>
   </nav>
 
-  <p *ngIf="loggedIn; else noLog">Sei Loggato</p>
-  <ng-template #noLog>Non sei Loggato</ng-template>
 </div>
 
 <div class="container">

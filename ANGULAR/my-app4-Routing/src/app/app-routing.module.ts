@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './auth-guard.service';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
@@ -9,23 +11,27 @@ import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  //Nell'array specifico le rotte. Sono degli oggetti JS
   {path: '', component: HomeComponent},
   {path: 'users', component: UsersComponent, children: [
     //i : identificano una propr dinamica da passare alla route, all'url
     {path: ':id/:nome', component: UserComponent}
   ]},
 
-  {path: 'servers', component: ServersComponent, children: [
-    // {path: 'server', component: ServerComponent},
-    // {path: 'edit', component: EditServerComponent}
+  {path: 'login', component: LoginComponent},
+
+  {path: 'servers',
+  // canActivate: [AuthGuardService], //QUESTA prop protegge la route servers
+  canActivateChild: [AuthGuardService],
+  component: ServersComponent, children: [
+
     {path: ':id', component: ServerComponent},
     {path: ':id/edit', component: EditServerComponent}
   ]},
 
+
   //NOt found. ATT: deve essere sempre inserito al fondo
   {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: 'not-found'} //wildcard, da inserire sempre al fondo
+  {path: '**', redirectTo: 'not-found'}
 
 
 ];

@@ -32,8 +32,6 @@ export class ServerComponent implements OnInit {
             this.server = this.serverService.getServerById(+params['id'])
           }
         );
-
-
   }
 
   onModServer(){

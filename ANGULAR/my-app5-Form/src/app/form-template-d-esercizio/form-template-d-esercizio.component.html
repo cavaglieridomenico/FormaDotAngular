@@ -1,5 +1,5 @@
 <!-- 1.Campo Mail (controllil: non vuoto e di tipo mail) -->
-<!-- 2.Dropdown che permette all'utente di sottoscrivere 3 abbonamenti: Base, Premium, Gold. Gold deve essere di default
+<!-- 2.Select che permette all'utente di sottoscrivere 3 abbonamenti: Base, Premium, Gold. Gold deve essere di default
   3. Campo Password, non vuoto
   4. Pulsante Submit
 
@@ -13,6 +13,16 @@
 
       <form #signUpForm = "ngForm" >
 
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Seleziona Abbonamento
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li aria-selected="true" ><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
 
 
       </form>

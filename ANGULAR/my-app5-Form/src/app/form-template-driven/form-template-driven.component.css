@@ -1,3 +1,16 @@
-/* input.ng-invalid{
+input#username.ng-invalid.ng-touched{
   border: 2px solid red
-} */
+}
+
+input#email.ng-invalid.ng-touched{
+  border: 2px solid red
+}
+
+input#username.ng-valid.ng-touched{
+  border: 2px solid greenyellow
+}
+
+
+input#email.ng-valid.ng-touched{
+  border: 2px solid greenyellow
+}

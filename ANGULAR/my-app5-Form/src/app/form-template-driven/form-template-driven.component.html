@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <!-- si chiama mioForm ed è di tipo ngForm. Sto dicendo ad Angular di creare un oggetto JS chiamato mioForm -->
+      <form #mioForm = "ngForm" (ngSubmit)="onSubmit(mioForm)">
+
+        <!-- Wrappa solo Username e Email -->
+        <div id="user-data" ngModelGroup="userData" #userData = "ngModelGroup">
+
+          <div class="mb-3">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username"
+            ngModel
+            name="username"
+          required
+          #username = "ngModel">
+          <!-- con ngModel identifico la proprietà dell'oggeto JS che Angular crea sulla base del mio Form
+            Con name gli assegno un valore
+            Con #username = 'ngModel' esposngo la prop e gli dico essre di tipo ngModel-->
+          </div>
+
+          <p class="alert alert-warning" *ngIf="!username.valid && username.touched">
+            Non hai compilato il campo
+          </p>
+
+          <div class="mb-3">
+            <label for="mail">Email:</label>
+            <input type="email" class="form-control" id="email"
+            ngModel
+            name="email"
+            required
+            email
+            #email="ngModel">
+          </div>
+          <p class="alert alert-warning" *ngIf="!email.valid && email.touched">
+            La mail è compilata male
+          </p>
+
+          <!-- <p class="alert alert-warning" *ngIf="!userData.valid">
+            Username e Mail sono compilati male
+          </p> -->
+        </div>
+
+          <div class="mb-3">
+          <label class="form-label" for="secret">Domanda Segreta: </label>
+          <select id="secret" class="form-control"
+          [ngModel]="domandaDefault"
+          name="secret">
+
+            <option value="animale">Il tuo primo animale da compagnia ?</option>
+            <option value="amico">Il tuo primo amico del cuore ?</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="answer">Risposta:</label>
+          <textarea class="form-control" id="answer" rows="3"
+          [(ngModel)]="risposta"
+          name="rispostaSecret"
+          required
+          #rispostaSecret = "ngModel"
+         ></textarea>
+
+
+         <p class="alert alert-warning" *ngIf="!rispostaSecret.valid && rispostaSecret.touched">
+          Non hai risposto alla domanda
+         </p>
+          <p>La tua risposta è: {{risposta}}</p>
+        </div>
+
+
+        <div class="form-check mb-3"  *ngFor="let gen of genere">
+          <input class="form-check-input" type="radio"
+          ngModel
+          name="genere"
+          [value]="gen">
+          <label class="form-check-label">
+          {{gen}}
+          </label>
+        </div>
+
+        <button class="btn btn-primary" type="submit"
+        [disabled]="!mioForm.valid"
+        >Invia</button>
+
+        <br>
+
+        <button class="btn btn-warning mt-2" type="button"
+        (click)="onSuggerisciName()">Usa i tuoi dati</button>
+      </form>
+
+      <hr>
+
+      <div class="row" *ngIf="submitted">
+        <div class="col-6">
+          <h3>Ecco i tuoi dati</h3>
+          <p>Username: {{user.username}}</p>
+          <p>email: {{user.email}}</p>
+          <p>secret: {{user.secret}}</p>
+          <p>risposta: {{user.rispostaSecret}}</p>
+          <p>genere: {{user.genere}}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

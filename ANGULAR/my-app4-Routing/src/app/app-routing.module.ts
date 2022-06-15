@@ -20,19 +20,17 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
 
   {path: 'servers',
-  // canActivate: [AuthGuardService], //QUESTA prop protegge la route servers
-  canActivateChild: [AuthGuardService],
+   //canActivate: [AuthGuardService], //QUESTA prop protegge la route servers
+   //canActivateChild: [AuthGuardService],
   component: ServersComponent, children: [
+    {path: ':id', component: ServerComponent, canActivate: [AuthGuardService]},
+    {path: ':id/edit', component: EditServerComponent,  canActivate: [AuthGuardService]}
 
-    {path: ':id', component: ServerComponent},
-    {path: ':id/edit', component: EditServerComponent}
   ]},
-
 
   //NOt found. ATT: deve essere sempre inserito al fondo
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: 'not-found'}
-
 
 ];
 

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Compila il form Reactive</h1>
+      <!-- Per sincronizzare il form con il ts uso le directive [formGroup] e formControlName -->
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+
+        <div formGroupName = 'userData'>
+
+          <div class="mb-3">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control"
+            formControlName = 'username'>
+        </div>
+
+
+          <p class="alert alert-danger"
+          *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched">
+          Hai inserito uno User non valido</p>
+
+          <p class="alert alert-danger"
+          *ngIf="signupForm.get('userData.username').errors &&
+          signupForm.get('userData.username').errors['nomeIsProibito']">
+
+          Stai utilizzando uno Username Proibito
+          </p>
+
+          <div class="mb-3">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control"
+            formControlName = 'email'>
+          </div>
+
+          <p class="alert alert-danger mt-2"
+          *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">
+          Hai inserito una mail non corretta</p>
+
+          <p class="alert alert-danger"
+          *ngIf="signupForm.get('userData.email').errors &&
+          signupForm.get('userData.email').errors['emailIsProibita']">
+          Stai utilizzando una Email  Proibita
+          </p>
+
+        </div>
+
+        <div class="mb-3"  *ngFor="let gen of genere">
+          <input class="form-check-input" type="radio" [value]="gen"
+          formControlName = 'genere'>
+          <label class="form-check-label">
+          {{gen}}
+          </label>
+        </div>
+
+          <p class="alert alert-danger mt-2"
+          *ngIf="!signupForm.get('genere').valid">
+          Non hai selezionato nessun genere</p>
+
+        <button class="btn btn-primary" type="submit">Invia</button>
+      </form>
+    </div>
+  </div>
+</div>

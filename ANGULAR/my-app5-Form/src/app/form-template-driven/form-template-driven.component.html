@@ -13,8 +13,8 @@
             <input type="text" class="form-control" id="username"
             ngModel
             name="username"
-          required
-          #username = "ngModel">
+            required
+            #username = "ngModel">
           <!-- con ngModel identifico la proprietà dell'oggeto JS che Angular crea sulla base del mio Form
             Con name gli assegno un valore
             Con #username = 'ngModel' esposngo la prop e gli dico essre di tipo ngModel-->
@@ -33,6 +33,7 @@
             email
             #email="ngModel">
           </div>
+
           <p class="alert alert-warning" *ngIf="!email.valid && email.touched">
             La mail è compilata male
           </p>

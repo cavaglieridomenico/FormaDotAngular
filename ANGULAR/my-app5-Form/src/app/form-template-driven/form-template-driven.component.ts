@@ -25,11 +25,10 @@ export class FormTemplateDrivenComponent implements OnInit {
   submitted = false;
 
   onSubmit(form: NgForm){
-    console.log(form.value);
+    console.log(form);
 
-    this.user.username = this.formReg.value.userData.username;
+    this.user.username = form.value.userData.username;
     this.user.email = this.formReg.value.userData.email;
-
     this.user.secret = this.formReg.value.secret;
     this.user.rispostaSecret = this.formReg.value.rispostaSecret;
     this.user.genere = this.formReg.value.genere;

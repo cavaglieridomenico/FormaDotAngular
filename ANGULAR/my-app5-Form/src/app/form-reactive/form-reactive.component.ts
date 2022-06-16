@@ -86,6 +86,7 @@ export class FormReactiveComponent implements OnInit {
   }
 
   onSubmit() {
+
     console.log(this.signupForm);
 
   }

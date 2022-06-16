@@ -8,6 +8,7 @@ import {
   Validators
 } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-form-reactive',
@@ -29,16 +30,17 @@ export class FormReactiveComponent implements OnInit {
     //specifico come sarà fatto il mio form, sincronizzato con il mio template
     //vado ad annidare username e mail
 
+
     this.signupForm = new FormGroup({
       'userData': new FormGroup({
 
-        'username': new FormControl(null, [Validators.required, this.nomiProibiti.bind(this)]),
+        'username': new FormControl('test', [Validators.required, CustomValidators.nomiProibiti]),
         'email': new FormControl(null, [Validators.required, Validators.email], this.emailProibite),
 
       }),
 
       'genere': new FormControl('femmina', Validators.required)
-    })
+    });
 
     //Status global del mio Form
     this.signupForm.statusChanges.subscribe(
@@ -51,21 +53,23 @@ export class FormReactiveComponent implements OnInit {
     )
 
     ///Valori
-      this.signupForm.valueChanges.subscribe(
+    this.signupForm.valueChanges.subscribe(
         values => console.log("Valori", values)
-      )
+    )
 
   }
 
-  //Custom Validator
-  usernameVietati = ['Pippo', 'Paperino', 'Pluto'];
+  // //Custom Validator
+  // usernameVietati = ['Pippo', 'Paperino', 'Pluto'];
 
-  nomiProibiti(control: FormControl): {[s: string]: boolean} {
-    if(this.usernameVietati.indexOf(control.value) != -1){
-      return {'nomeIsProibito': true} // oggetto JS -> chiave: valore
-    }
-    return null;
-  }
+  //Questo è stato spostato nel file esterno
+
+  // nomiProibiti(control: FormControl): {[s: string]: boolean} {
+  //   if(this.usernameVietati.indexOf(control.value) != -1){
+  //     return {'nomeIsProibito': true} // oggetto JS -> chiave: valore
+  //   }
+  //   return null;
+  // }
 
   //Async Validator
   emailProibite(control: FormControl): Promise<any> | Observable<any>{

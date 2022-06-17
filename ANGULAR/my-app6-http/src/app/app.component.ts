@@ -12,9 +12,11 @@ export class AppComponent {
 
   constructor(private userService: UsersService){}
 
+  //prende il json di reqres salvato in Firebase
   onPrendiUtenti(){
     this.userService.getData()  //ritorna degli Observable
         .subscribe( utenti => {
+          console.log(utenti.body);
           console.log(utenti);
         })
   }
@@ -33,5 +35,20 @@ export class AppComponent {
     })
   }
 
+  onClearUtenti(){
+    this.userService.deleteUsers()
+    .subscribe(()=>{
+      console.log("Hai cancellato tutti gli utenti");
+      this.mieiUsers = [];
+    })
+  }
+
+  onClearSingolo(id: string){
+    this.userService.deleteSingoloUser(id)
+    .subscribe(()=>{
+      console.log('hai eliminato l\'utente con il seguente id: ' + id);
+      this.onPrendiMieiUtenti();
+    })
+  }
 
 }

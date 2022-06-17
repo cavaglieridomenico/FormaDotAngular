@@ -74,4 +74,24 @@ export class UsersService {
   deleteSingoloUser(id: string){
     return this.http.delete(this.url + '/mieiUtenti/' + id + '.json');
   }
+
+
+  getPosts(){
+    return this.http.get('http://localhost:3000/posts');
+  }
+
+  postDataPost(){
+    this.http.post(
+      'http://localhost:3000/posts',
+      {
+        pippo: "Don Chisciotte",
+        paperino: "Cervantes"
+      }
+    ).subscribe(()=>{
+      console.log("Hai aggiunto un post");
+
+    })
+  }
+
+
 }

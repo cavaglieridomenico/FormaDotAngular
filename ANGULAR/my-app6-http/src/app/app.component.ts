@@ -25,7 +25,7 @@ export class AppComponent {
     this.userService.creaUtente(nome, cognome);
   }
 
-  mieiUsers: Utente[];
+  mieiUsers: Utente[] = [];
 
   onPrendiMieiUtenti(){
     this.userService.fetchUtenti()
@@ -51,4 +51,14 @@ export class AppComponent {
     })
   }
 
+  onGetPosts(){
+    this.userService.getPosts()
+    .subscribe((response) => {
+      console.log(response);
+    })
+  }
+
+  onPostDataPost(){
+    this.userService.postDataPost();
+  }
 }
